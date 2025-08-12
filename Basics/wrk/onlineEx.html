@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paragraph DOM Manipulation</title>
+</head>
+<body>
+
+  <!-- Four paragraph elements -->
+  <p>Paragraph One</p>
+  <p>Paragraph Two</p>
+  <p>Paragraph Three</p>
+  <p></p> <!-- Fourth will be updated -->
+
+  <script>
+    // 1. Get the first paragraph using querySelector(tagname)
+    const firstPara = document.querySelector('p');
+    console.log("First paragraph (by tag):", firstPara.textContent);
+
+    // 2. Assign unique IDs to all paragraphs (for later use)
+    const allParas = document.querySelectorAll('p');
+    allParas[0].setAttribute('id', 'para1');
+    allParas[1].id = 'para2'; // another way
+    allParas[2].setAttribute('id', 'para3');
+    allParas[3].id = 'para4';
+
+    // 3. Get paragraphs by ID using querySelector('#id')
+    const para1 = document.querySelector('#para1');
+    const para2 = document.querySelector('#para2');
+    const para3 = document.querySelector('#para3');
+    const para4 = document.querySelector('#para4');
+    console.log("By ID:", para1.textContent, para2.textContent, para3.textContent);
+
+    // 4. Get all p elements using querySelectorAll(tagname)
+    const nodeList = document.querySelectorAll('p');
+    
+    // 5. Loop through nodeList and get the text content
+    nodeList.forEach((p, index) => {
+      console.log(`Paragraph ${index + 1}:`, p.textContent);
+    });
+
+    // 6. Set text content to the fourth paragraph
+    nodeList[3].textContent = 'Fourth Paragraph';
+
+    // 7. Set id and class attribute for all using different methods
+    nodeList[0].className = 'para-class-1'; // method 1
+    nodeList[1].setAttribute('class', 'para-class-2'); // method 2
+    nodeList[2].classList.add('para-class-3'); // method 3
+    nodeList[3].classList = 'para-class-4'; // method 4
+  </script>
+
+</body>
+</html>

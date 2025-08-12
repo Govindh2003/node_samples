@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="heading">Original Heading</h1>
+  <h2 class="head">Subheading 1</h2>
+  <h2 class="head">Subheading 2</h2>
+  <h3>Section 1</h3>
+  <h3>Section 2</h3>
+
+  <script>
+    // Update by ID
+    document.getElementById('heading').innerHTML = 'Learn 15';
+    document.getElementById('heading').style.color = 'red';
+    document.getElementById('heading').style.fontSize = '40px';
+    document.getElementById('heading').style.fontFamily = "'Courier New', Courier, monospace";
+
+    // Update by class
+    document.getElementsByClassName('head')[0].innerHTML = 'Basic JavaScript';
+    document.getElementsByClassName('head')[1].innerHTML = 'Basic JavaScript';
+
+    // Update by tag name
+    document.getElementsByTagName('h3')[0].innerHTML = 'MERNSTACK';
+    document.getElementsByTagName('h3')[1].innerHTML = 'FULLSTACK';
+
+    // Using querySelector
+    let firstTitle = document.querySelector('h2');
+    firstTitle.innerHTML = 'Hello World';
+
+    document.querySelector('h3').innerHTML = 'Hellooooo'; // Changes first <h3>
+
+
+        const titles=document.querySelectorAll('h3')
+        titles[1].textContent='Fourth Title'
+  </script>
+
+</body>
+</html>
