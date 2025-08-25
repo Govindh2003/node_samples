@@ -5,10 +5,10 @@ app.use(express.json());
 let users=[
   {
     id:1,
-  name:"Shiva",
+  name:"govindh",
   age:19,
   marks:45,
-  email:"shiva@gmail.com"
+  email:"gp@gmail.com"
   },
   {
     id:2,
